@@ -1,49 +1,15 @@
-const express = require('express')
-const cors = require('cors')
-const nodemailer = require('nodemailer')
+const express = require('express');
 
-const app = express()
+const cors = require('cors');
 
-app.use(cors())
-app.use(express.json())
+const routes  = require('./src/routes');
 
-app.post('/', async (req, res) => {
-    const { name, phone, email, description } = req.body
+const app = express();
 
-    let now = new Date
+app.use(cors());
 
-    let localDate = '0' + now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear() + ' ' + now.getHours() +
-    ':' + now.getMinutes() + ':' + now.getSeconds()
+app.use(express.json());
 
-    const transporter = nodemailer.createTransport({
-        host: 'smtp.umbler.com',
-        port: 587,
-        secure: false,
-        auth: {
-            user: 'exemplo@vitorrocha.com',
-            pass: 'exemplo123'
-        }
-    })
-
-    const mailOptions = {
-        from: 'exemplo@vitorrocha.com',
-        to: '7sightjr@gmail.com',
-        subject: 'Teste do formulario',
-        text: 'UM CLIENTE ENTROU EM CONTATO COM VOCÊ' + '\n' + 
-        'Nome: ' + name + '\n' +
-        'Telefone: ' + phone + '\n' +
-        'Email: ' + email + '\n' +
-        'Descrição: ' + description,
-        date: localDate
-    }
-
-    transporter.sendMail(mailOptions, (err, info) => {
-        if(err) {
-            return console.log(err)
-        }
-        console.log('Envio feito com sucesso.', info)
-    })
-    return res.json({ name, phone, email, description });
-})
+app.use(routes);
 
 app.listen(process.env.PORT || 3333);
