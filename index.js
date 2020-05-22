@@ -46,4 +46,4 @@ app.post('/', async (req, res) => {
     return res.json({ name, phone, email, description });
 })
 
-app.listen(3333)
+app.listen(process.env.PORT || 3333);
