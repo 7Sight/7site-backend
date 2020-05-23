@@ -20,7 +20,7 @@ module.exports = {
             user: 'exemplo@vitorrocha.com',
             pass: 'exemplo123'
         }
-    })
+    });
 
     const mailOptions = {
         from: 'exemplo@vitorrocha.com',
