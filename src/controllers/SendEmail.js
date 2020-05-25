@@ -26,7 +26,7 @@ module.exports = {
         from: 'exemplo@vitorrocha.com',
         to: '7sightjr@gmail.com',
         subject: 'Teste do formulario',
-        text: 'UM CLIENTE ENTROU EM CONTATO COM VOCÊ' + '\n' + 
+        text: 'Um cliente entrou em contato com a 7Sight' + '\n' + 
         'Nome: ' + name + '\n' +
         'Telefone: ' + phone + '\n' +
         'Email: ' + email + '\n' +
