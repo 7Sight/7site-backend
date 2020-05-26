@@ -4,6 +4,6 @@ const routes = express.Router();
 
 const SendEmail = require('./controllers/SendEmail');
 
-routes.post('/', SendEmail.send);
+routes.post('/sendEmail', SendEmail.send);
 
 module.exports = routes;

@@ -25,7 +25,7 @@ module.exports = {
     const mailOptions = {
         from: 'exemplo@vitorrocha.com',
         to: '7sightjr@gmail.com',
-        subject: 'Teste do formulario',
+        subject: 'Cliente entrou em contato',
         text: 'Um cliente entrou em contato com a 7Sight' + '\n' + 
         'Nome: ' + name + '\n' +
         'Telefone: ' + phone + '\n' +
