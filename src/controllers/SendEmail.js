@@ -43,5 +43,11 @@ module.exports = {
 
     return res.json({ name, phone, email, description });
 
+    },
+
+    async teste(req, res){
+
+        return res.json("teste")
+
     }
 }
