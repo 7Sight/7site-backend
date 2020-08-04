@@ -12,18 +12,16 @@ module.exports = {
     let localDate = '0' + now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear() + ' ' + now.getHours() +
     ':' + now.getMinutes() + ':' + now.getSeconds()
 
-    const transporter = nodemailer.createTransport({
-        host: 'smtp.umbler.com',
-        port: 587,
-        secure: false,
+    const transporter = nodemailer.createTransport({ 
+        service: 'gmail',
         auth: {
-            user: 'exemplo@vitorrocha.com',
-            pass: 'exemplo123'
+            user: '7sightjr@gmail.com',
+            pass: '7Sight@2018'
         }
     });
 
     const mailOptions = {
-        from: 'exemplo@vitorrocha.com',
+        from: '7sightjr@gmail.com',
         to: '7sightjr@gmail.com',
         subject: 'Cliente entrou em contato',
         text: 'Um cliente entrou em contato com a 7Sight' + '\n' + 
